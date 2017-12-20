@@ -25,7 +25,7 @@ public class MainApp extends Application {
     private ObservableList<Person> personData = FXCollections.observableArrayList();
     
     public MainApp() {
-    	personData.add(new Person("朱亚军", "Java", "工作", "2015-08-26", "2018-08-25"));
+    	personData.add(new Person("DHzhu", "Java", "工作", "2015-08-26", "2018-08-25"));
     }
 
     public ObservableList<Person> getPersonData() {
