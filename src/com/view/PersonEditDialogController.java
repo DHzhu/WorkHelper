@@ -113,7 +113,7 @@ public class PersonEditDialogController {
         } else {
         	Alert alert = new Alert(AlertType.ERROR);
 	    	alert.setTitle("错误");
-	    	alert.setContentText(errorMessage);
+	    	alert.setContentText("请选择需编辑的人员！");
 	    	alert.showAndWait();
         	return false;
         }
