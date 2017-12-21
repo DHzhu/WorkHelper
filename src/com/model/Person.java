@@ -18,11 +18,11 @@ import javafx.beans.property.StringProperty;
  * @date  : 2017年12月19日
  */
 public class Person {
-	private final StringProperty name;
-	private final StringProperty skill;
-	private final StringProperty status;
-	private final ObjectProperty<LocalDate> startDate;
-	private final ObjectProperty<LocalDate> endDate;
+	private StringProperty name;
+	private StringProperty skill;
+	private StringProperty status;
+	private ObjectProperty<LocalDate> startDate;
+	private ObjectProperty<LocalDate> endDate;
 	
 	public Person() {
 		this(null, null, null, null, null);
@@ -33,8 +33,8 @@ public class Person {
 		this.skill = new SimpleStringProperty(skill);
 		this.status = new SimpleStringProperty(status);
 		
-		this.startDate = new SimpleObjectProperty<LocalDate>(DateUtil.parse(startDate));
-		this.endDate = new SimpleObjectProperty<LocalDate>(DateUtil.parse(endDate));
+		this.startDate = new SimpleObjectProperty<LocalDate>(startDate == null ? null : DateUtil.parse(startDate));
+		this.endDate = new SimpleObjectProperty<LocalDate>(endDate == null ? null : DateUtil.parse(endDate));
 	}
 
 	/**
@@ -70,6 +70,41 @@ public class Person {
 	 */
 	public ObjectProperty<LocalDate> getEndDate() {
 		return endDate;
+	}
+
+	/**
+	 * 
+	 */
+	public void setName(StringProperty name) {
+		this.name = name;
+	}
+
+	/**
+	 * 
+	 */
+	public void setSkill(StringProperty skill) {
+		this.skill = skill;
+	}
+
+	/**
+	 * 
+	 */
+	public void setStatus(StringProperty status) {
+		this.status = status;
+	}
+
+	/**
+	 * 
+	 */
+	public void setStartDate(ObjectProperty<LocalDate> startDate) {
+		this.startDate = startDate;
+	}
+
+	/**
+	 * 
+	 */
+	public void setEndDate(ObjectProperty<LocalDate> endDate) {
+		this.endDate = endDate;
 	}
 	
 }

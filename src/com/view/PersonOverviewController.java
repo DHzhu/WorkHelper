@@ -65,7 +65,7 @@ public class PersonOverviewController {
 		// Initialize the person table with the two columns.
 		nameColumn.setCellValueFactory(cellData -> cellData.getValue().getName());
 		
-		statusChB.setItems(FXCollections.observableArrayList("工作", "释放"));;
+		statusChB.setItems(FXCollections.observableArrayList("工作", "释放"));
 
 		showPersonDetails(null);
 
@@ -83,6 +83,33 @@ public class PersonOverviewController {
 	    	Alert alert = new Alert(AlertType.ERROR);
 	    	alert.setTitle("错误");
 	    	alert.setContentText("请选择需删除的人员！");
+	    	alert.showAndWait();
+	    }
+	}
+	
+	@FXML
+	private void handleNewPerson() {
+	    Person tempPerson = new Person();
+	    boolean okClicked = mainApp.showPersonEditDialog(tempPerson, "新增");
+	    if (okClicked) {
+	        mainApp.getPersonData().add(tempPerson);
+	    }
+	}
+	
+	@FXML
+	private void handleEditPerson() {
+	    Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+	    if (selectedPerson != null) {
+	        boolean okClicked = mainApp.showPersonEditDialog(selectedPerson, "编辑");
+	        if (okClicked) {
+	            showPersonDetails(selectedPerson);
+	        }
+
+	    } else {
+	    	// Nothing selected.
+	    	Alert alert = new Alert(AlertType.ERROR);
+	    	alert.setTitle("错误");
+	    	alert.setContentText("请选择需编辑的人员！");
 	    	alert.showAndWait();
 	    }
 	}

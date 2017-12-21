@@ -78,12 +78,12 @@
                   </GridPane>
                   <HBox layoutX="143.0" layoutY="210.0">
                      <children>
-                        <Button layoutX="143.0" layoutY="210.0" mnemonicParsing="false" text="新建" />
+                        <Button layoutX="143.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleNewPerson" text="新建" />
                      </children>
                   </HBox>
                   <HBox layoutX="208.0" layoutY="210.0">
                      <children>
-                        <Button layoutX="208.0" layoutY="210.0" mnemonicParsing="false" text="修改" />
+                        <Button layoutX="208.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleEditPerson" text="修改" />
                      </children>
                   </HBox>
                   <HBox layoutX="275.0" layoutY="210.0">
