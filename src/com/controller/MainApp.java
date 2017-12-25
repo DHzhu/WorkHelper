@@ -40,7 +40,7 @@ public class MainApp extends Application {
 		this.primaryStage = primaryStage;
         this.primaryStage.setTitle("WorkHelper");
         
-        this.primaryStage.getIcons().add(new Image("/images/Address_Book.png"));
+        this.primaryStage.getIcons().add(new Image("/images/General_Office.png"));
 
         initRootLayout();
 
