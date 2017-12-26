@@ -5,7 +5,12 @@ package com.model;
 
 import java.time.LocalDate;
 
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import com.controller.utils.DateUtil;
+import com.controller.utils.LocalDateAdapter;
+import com.controller.utils.StringAdapter;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -17,6 +22,7 @@ import javafx.beans.property.StringProperty;
  * @author: Zhu
  * @date  : 2017年12月19日
  */
+@XmlType(propOrder = {"name", "skill", "status", "startDate", "endDate"})
 public class Person {
 	private StringProperty name;
 	private StringProperty skill;
@@ -40,6 +46,7 @@ public class Person {
 	/**
 	 * 
 	 */
+	@XmlJavaTypeAdapter(StringAdapter.class)
 	public StringProperty getName() {
 		return name;
 	}
@@ -47,6 +54,7 @@ public class Person {
 	/**
 	 * 
 	 */
+	@XmlJavaTypeAdapter(StringAdapter.class)
 	public StringProperty getSkill() {
 		return skill;
 	}
@@ -54,6 +62,7 @@ public class Person {
 	/**
 	 * 
 	 */
+	@XmlJavaTypeAdapter(StringAdapter.class)
 	public StringProperty getStatus() {
 		return status;
 	}
@@ -61,6 +70,7 @@ public class Person {
 	/**
 	 * 
 	 */
+	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public ObjectProperty<LocalDate> getStartDate() {
 		return startDate;
 	}
@@ -68,6 +78,7 @@ public class Person {
 	/**
 	 * 
 	 */
+	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public ObjectProperty<LocalDate> getEndDate() {
 		return endDate;
 	}

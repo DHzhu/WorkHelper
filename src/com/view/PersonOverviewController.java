@@ -37,7 +37,6 @@ public class PersonOverviewController {
 	@FXML
 	private DatePicker endDate;
 
-	@SuppressWarnings("unused")
 	private MainApp mainApp;
 
 	public PersonOverviewController() {
@@ -67,7 +66,7 @@ public class PersonOverviewController {
 		
 		statusChB.setItems(FXCollections.observableArrayList("工作", "释放"));
 
-		showPersonDetails(null);
+		showPersonDetails(null);		
 
 		personTable.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
