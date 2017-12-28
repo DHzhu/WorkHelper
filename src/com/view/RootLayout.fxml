@@ -18,6 +18,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleExit" text="关闭" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="tools">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleShowLengthOfService" text="图像统计" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

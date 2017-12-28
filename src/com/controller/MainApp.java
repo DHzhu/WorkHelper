@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 
 import com.model.Person;
 import com.model.PersonListWrapper;
+import com.view.LengthOfServiceController;
 import com.view.PersonEditDialogController;
 import com.view.PersonOverviewController;
 import com.view.RootLayoutController;
@@ -136,6 +137,31 @@ public class MainApp extends Application {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public void showLengthOfService() {
+	    try {
+	        // Load the fxml file and create a new stage for the popup.
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(MainApp.class.getResource("/com/view/LengthOfService.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("工作时限统计");
+	        dialogStage.getIcons().add(new Image("/images/bar-chart.png"));
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Set the persons into the controller.
+	        LengthOfServiceController controller = loader.getController();
+	        controller.setPersonData(personData);
+
+	        dialogStage.show();
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	/**

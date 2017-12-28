@@ -74,6 +74,11 @@ public class RootLayoutController {
 			mainApp.savePersonDataToFile(file);
 		}
 	}
+	
+	@FXML
+	private void handleShowLengthOfService() {
+	  mainApp.showLengthOfService();
+	}
 
 	@FXML
 	private void handleExit() {
